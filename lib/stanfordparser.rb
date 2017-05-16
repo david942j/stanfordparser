@@ -49,7 +49,7 @@ module StanfordParser
       config = Pathname.new("C:\\stanford-parser\\ruby-stanford-parser.yaml")
     else
       root = Pathname.new("/usr/local/stanford-parser/current")
-      config = Pathname.new("/etc/ruby-stanford-parser.yaml")
+      config = Pathname.new(File.join(__dir__, '..', 'ruby-stanford-parser.yaml'))
     end
     jvmargs = ["-server", "-Xmx150m"]
     if config.file?
@@ -61,8 +61,8 @@ module StanfordParser
         jvmargs = configuration["jvmargs"].split
       end
     end
-    Rjb::load(classpath = (root + "stanford-parser.jar").to_s, jvmargs)
-    root
+    Rjb::load(classpath = (File.join(root, "stanford-parser.jar")), jvmargs)
+    root.to_s
   end
 
   private_class_method :initialize_on_load

@@ -14,25 +14,20 @@ Gem::Specification.new do |s|
   s.email = %q{jcwilk@gmail.com}
   s.extra_rdoc_files = [
     "LICENSE",
-     "README.orig",
-     "README.rdoc"
+    "README.rdoc"
   ]
   s.files = [
     ".document",
-     ".gitignore",
-     "LICENSE",
-     "README.orig",
-     "README.rdoc",
-     "Rakefile",
-     "VERSION.yml",
-     "examples/connection_finder.rb",
-     "examples/stanford-sentence-parser.rb",
-     "lib/stanfordparser.rb",
-     "lib/stanfordparser/java_object.rb",
-     "spec/spec.opts",
-     "spec/spec_helper.rb",
-     "spec/stanfordparser_spec.rb",
-     "test/test_stanfordparser.rb"
+    ".gitignore",
+    "LICENSE",
+    "README.rdoc",
+    "Rakefile",
+    "VERSION.yml",
+    "examples/stanford-sentence-parser.rb",
+    "lib/stanfordparser.rb",
+    "lib/stanfordparser/java_object.rb",
+    "test/test_stanfordparser.rb",
+    'ruby-stanford-parser.yaml'
   ]
   s.homepage = %q{http://github.com/jcwilk/stanfordparser}
   s.rdoc_options = ["--charset=UTF-8"]
@@ -40,30 +35,11 @@ Gem::Specification.new do |s|
   s.rubygems_version = %q{1.3.7}
   s.summary = %q{GitHub upload/extension of Bill McNeal's stanfordparser rubygem}
   s.test_files = [
-    "spec/spec_helper.rb",
-     "spec/stanfordparser_spec.rb",
-     "test/test_stanfordparser.rb",
-     "examples/connection_finder.rb",
-     "examples/stanford-sentence-parser.rb"
+    "test/test_stanfordparser.rb",
+    "examples/stanford-sentence-parser.rb"
   ]
-
-  if s.respond_to? :specification_version then
-    current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
-    s.specification_version = 3
-
-    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<rjb>, [">= 1.2.5"])
-      s.add_runtime_dependency(%q<treebank>, [">= 3.0.0"])
-      s.add_development_dependency(%q<rspec>, [">= 1.2.9"])
-    else
-      s.add_dependency(%q<rjb>, [">= 1.2.5"])
-      s.add_dependency(%q<treebank>, [">= 3.0.0"])
-      s.add_dependency(%q<rspec>, [">= 1.2.9"])
-    end
-  else
-    s.add_dependency(%q<rjb>, [">= 1.2.5"])
-    s.add_dependency(%q<treebank>, [">= 3.0.0"])
-    s.add_dependency(%q<rspec>, [">= 1.2.9"])
-  end
+  s.add_dependency(%q<rjb>, ["~> 1.5"])
+  s.add_dependency(%q<treebank>, ["~> 3.0"])
+  s.add_dependency(%q<rspec>, ["~> 3.6"])
 end
 

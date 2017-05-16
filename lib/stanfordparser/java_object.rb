@@ -37,7 +37,7 @@ module Rjb
     # treat <em>obj</em> as an instance of a Java object.
     def initialize(obj, *args)
       @java_object = obj.class == String ?
-      Rjb::import(obj).send(:new, *args) : obj
+        Rjb::import(obj).send(:new, *args) : obj
     end
 
     # Enumerate all the items in the object using its iterator.  If the object
